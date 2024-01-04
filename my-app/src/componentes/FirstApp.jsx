@@ -27,5 +27,12 @@ export function FirstApp(props){
 
  FirstApp.propTypes={
     title: PropTypes.string.isRequired,
-    subtitle: PropTypes.number.isRequired
+    subtitle: PropTypes.string
+ }
+
+ //haciendo tipos por defecto
+
+ FirstApp.defaultProps={
+    title: 'No hay ningún titulo, este mensaje esta por defecto',
+    subtitle: 'Msje por defecto, usando defaultProps'
  }
