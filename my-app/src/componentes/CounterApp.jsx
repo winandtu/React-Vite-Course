@@ -9,16 +9,28 @@
   */
  
  
- import ProtoTypes from 'prop-types'
+import ProtoTypes from 'prop-types'
+import { useState } from 'react';
 
  export const CounterApp = (props)=>{
 
-    const {value}=props;
+    const {value}=props; //uso de las propiedades de los componentes
+    const[counter, setCounter] = useState(value); // uso de hooks
+
+//funcion que ira al hacer click en mas 1
+    function disparador(e){
+        
+        setCounter(counter+1)
+    }
 
     return(
         <>
             <h1>CounterApp</h1>
-            <h2>{value}</h2>
+            <h2>{counter}</h2>
+            
+            <button onClick={disparador}>
+                +1
+            </button>
         </>
 
     )
