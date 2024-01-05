@@ -18,18 +18,37 @@ import { useState } from 'react';
     const[counter, setCounter] = useState(value); // uso de hooks
 
 //funcion que ira al hacer click en mas 1
-    function disparador(e){
+    function aumentarCounter(e){
         
         setCounter(counter+1)
     }
+//Funcion para reducir contador
+    const reducirCounter = (e) =>{
+
+        setCounter(counter-1)
+    }
+
+//Funcion para reiniciar contador
+
+const reiniciarCounter = (e)=>{
+    setCounter(value)
+}
 
     return(
         <>
             <h1>CounterApp</h1>
             <h2>{counter}</h2>
             
-            <button onClick={disparador}>
+            <button onClick={aumentarCounter}>
                 +1
+            </button>
+
+            <button onClick={reducirCounter}>
+                -1
+            </button>
+
+            <button onClick={reiniciarCounter}>
+                Reset
             </button>
         </>
 
